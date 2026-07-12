@@ -12,9 +12,15 @@ doing so.
 
 ## Status
 
-Design phase. The pre-registered experimental design — research questions, hypotheses, schemes,
-methodology, and validity threats — is in [`docs/EXPERIMENT-DESIGN.md`](docs/EXPERIMENT-DESIGN.md).
-Hypotheses are fixed **before** data collection.
+Core + benchmarks implemented; first results in. Pre-registered design in
+[`docs/EXPERIMENT-DESIGN.md`](docs/EXPERIMENT-DESIGN.md); full results in
+[`results/RESULTS.md`](results/RESULTS.md).
+
+**Headline (exploratory macOS/arm64 host):** migrating envelope encryption from RSA-2048 to ML-KEM-768
+is a latency and throughput *improvement* on every operation — ML-KEM unwrap is **~20× faster than
+RSA** (42 µs vs 870 µs), ~20× higher read throughput, and ~11× faster key rotation — and its only cost
+is **storage** (~1 KB/record, ~12× X25519 at scale). For data-at-rest, PQC is a read-path upgrade over
+RSA, not a sacrifice.
 
 ## Schemes compared (uniform `KeyEnvelopeProvider` interface)
 
